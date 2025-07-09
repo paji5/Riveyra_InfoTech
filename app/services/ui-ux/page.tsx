@@ -17,6 +17,11 @@ import {
   Shirt,
   Mail,
   Palette,
+  Search,
+  Eye,
+  Lightbulb,
+  Wrench,
+  CheckCircle,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -31,31 +36,36 @@ export default function UIUXPage() {
   const designProcess = [
     {
       title: "DISCOVER",
-      color: "from-green-400 to-green-600",
-      bgColor: "bg-green-500",
+      icon: Search,
+      color: "from-blue-500 to-blue-600",
+      bgColor: "bg-blue-500",
       description: "Research and understand user needs",
     },
     {
       title: "DEFINE",
-      color: "from-emerald-400 to-emerald-600",
-      bgColor: "bg-emerald-500",
+      icon: Eye,
+      color: "from-purple-500 to-purple-600",
+      bgColor: "bg-purple-500",
       description: "Define problems and opportunities",
     },
     {
       title: "IDEATE",
-      color: "from-green-400 to-emerald-600",
-      bgColor: "bg-green-600",
+      icon: Lightbulb,
+      color: "from-orange-500 to-orange-600",
+      bgColor: "bg-orange-500",
       description: "Generate creative solutions",
     },
     {
       title: "PROTOTYPE",
-      color: "from-emerald-400 to-green-600",
-      bgColor: "bg-emerald-600",
+      icon: Wrench,
+      color: "from-pink-500 to-pink-600",
+      bgColor: "bg-pink-500",
       description: "Build and test prototypes",
     },
     {
       title: "TEST",
-      color: "from-green-400 to-green-600",
+      icon: CheckCircle,
+      color: "from-green-500 to-green-600",
       bgColor: "bg-green-500",
       description: "Validate with real users",
     },
@@ -192,14 +202,12 @@ export default function UIUXPage() {
 
     gsap.fromTo(
       ".process-item",
-      { opacity: 0, y: 50, scale: 0.8 },
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        scale: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "back.out(1.7)",
+        duration: 0.6,
+        stagger: 0.1,
         scrollTrigger: {
           trigger: ".process-grid",
           start: "top 80%",
@@ -342,7 +350,7 @@ export default function UIUXPage() {
             <div className="hero-mockup relative flex justify-center">
               <div className="relative">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/riveyrainfotech.com_ui-ux-page%20%281%29.png-EIWD16JncC1pUXrRTIleX61OOyEG2c.jpeg"
+                  src="/images/dropdown/ui-ux.png"
                   alt="UI/UX Design Mockup"
                   className="w-full max-w-md h-auto rounded-3xl shadow-2xl"
                 />
@@ -364,37 +372,45 @@ export default function UIUXPage() {
       </section>
 
       {/* UX Design Process Section */}
-      <section className="process-section py-20 bg-gradient-to-br from-white to-gray-50 text-gray-900 relative">
+      <section className="process-section py-20 bg-white text-gray-900 relative">
         <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
           <div className="text-center mb-16">
-            <div className="process-title inline-block bg-black text-white px-8 py-3 rounded-full text-xl font-bold mb-8">
-              UX Design Process
-            </div>
+            <h2 className="process-title text-4xl lg:text-5xl font-bold mb-4">UX Design Process</h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              Our systematic approach to creating exceptional user experiences through research, design, and validation
+            </p>
           </div>
 
-          <div className="process-grid grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          <div className="process-grid grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
+            {/* Simple connecting line */}
+            <div className="hidden lg:block absolute top-16 left-0 right-0 h-0.5 bg-gray-200"></div>
+
             {designProcess.map((step, index) => (
-              <motion.div
-                key={step.title}
-                className="process-item text-center"
-                whileHover={{ scale: 1.05, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
+              <div key={step.title} className="process-item text-center relative">
                 <div className="relative mb-6">
-                  {/* Paper airplane icon */}
+                  {/* Simple icon container */}
                   <div
-                    className={`w-20 h-20 mx-auto ${step.bgColor} rounded-lg flex items-center justify-center shadow-lg transform rotate-12 hover:rotate-0 transition-transform duration-300`}
+                    className={`w-16 h-16 mx-auto bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 relative z-10`}
                   >
-                    <div className="w-8 h-8 bg-white rounded-sm transform rotate-45"></div>
+                    <step.icon className="w-7 h-7 text-white" />
                   </div>
-                  {/* Connecting line */}
+
+                  {/* Step number */}
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gray-800 text-white rounded-full flex items-center justify-center text-xs font-bold">
+                    {index + 1}
+                  </div>
+
+                  {/* Simple connecting line */}
                   {index < designProcess.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gray-300 z-0"></div>
+                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-200 z-0"></div>
                   )}
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-600">{step.description}</p>
-              </motion.div>
+
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">{step.title}</h3>
+                  <p className="text-gray-600 text-sm">{step.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
