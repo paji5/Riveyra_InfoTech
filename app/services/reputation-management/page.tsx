@@ -1,23 +1,11 @@
 "use client"
-
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  Shield,
-  TrendingUp,
-  Search,
-  Monitor,
-  Star,
-  MessageSquare,
-  Phone,
-  ChevronDown,
-  ChevronRight,
-  Home,
-} from "lucide-react"
+import { Shield, TrendingUp, Search, Monitor, Star, MessageSquare, ChevronDown, ChevronRight, Home } from "lucide-react"
 import { useState } from "react"
-import Image from "next/image"
+import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
@@ -168,12 +156,12 @@ export default function ReputationManagementPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  At Riveyra Infotech, we take great satisfaction in offering our clients PPC advertising services of
-                  the highest grade that provide noticeable outcomes. Our method is based on a calculated fusion of
+                  At Riveyra Infotech, we take great satisfaction in offering our clients reputation management services
+                  of the highest grade that provide noticeable outcomes. Our method is based on a calculated fusion of
                   industry knowledge, laborious preparation, and a dedication to engaging optimization in order to
-                  customize our PPC campaigns to meet our client's specific needs—whether it be raising conversion
-                  rates, increasing website traffic, or raising brand awareness—we start by getting to know their
-                  individual goals and objectives.
+                  customize our reputation management campaigns to meet our client's specific needs—whether it be
+                  raising conversion rates, increasing website traffic, or raising brand awareness—we start by getting
+                  to know their individual goals and objectives.
                 </motion.p>
 
                 <motion.div
@@ -181,12 +169,14 @@ export default function ReputationManagementPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
-                  >
-                    Enquire Now
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      size="lg"
+                      className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
+                    >
+                      Get Started Today
+                    </Button>
+                  </Link>
                 </motion.div>
               </motion.div>
 
@@ -198,15 +188,12 @@ export default function ReputationManagementPage() {
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
                 <div className="relative z-10">
-                  <Image
-                    src="/images/reputation-management-hero.png"
+                  <img
+                    src="/images/dropdown/repu-mang.png"
                     alt="Reputation Management Services"
-                    width={600}
-                    height={500}
                     className="w-full h-auto rounded-lg"
                   />
                 </div>
-
                 {/* Floating Elements Around Image */}
                 <motion.div
                   className="absolute -top-4 -left-4 w-8 h-8 bg-green-400 rounded-full"
@@ -306,25 +293,67 @@ export default function ReputationManagementPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
-          <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+        <section className="py-8 sm:py-12 lg:py-16 xl:py-20 relative overflow-hidden">
+          {/* Simple Blue Background */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-blue-900/30"></div>
+            <div className="absolute top-10 left-10 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 lg:w-48 lg:h-48 bg-blue-500/10 rounded-full blur-xl sm:blur-2xl"></div>
+            <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-20 h-20 sm:w-40 sm:h-40 lg:w-64 lg:h-64 bg-blue-400/10 rounded-full blur-xl sm:blur-2xl"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-20 relative z-10">
             <motion.div
-              className="flex flex-col md:flex-row items-center justify-between gap-8"
-              initial={{ opacity: 0, y: 30 }}
+              className="text-center scroll-animate"
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Let's Start a New Project Together</h2>
-              </div>
-              <Button
-                size="lg"
-                className="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+              <motion.h2
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 lg:mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
               >
-                <Phone className="w-5 h-5" />
-                Call Us Now
-              </Button>
+                Let's Start a New Project <span className="text-blue-400">Together</span>
+              </motion.h2>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Link href="/contact">
+                  <motion.button
+                    className="relative group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 text-sm sm:text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300"
+                    whileHover={{
+                      scale: 1.02,
+                      boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    {/* Simple Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
+
+                    {/* Button Text */}
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      Call Us Now
+                      <motion.span
+                        animate={{ x: [0, 3, 0] }}
+                        transition={{
+                          duration: 2,
+                          repeat: Number.POSITIVE_INFINITY,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        →
+                      </motion.span>
+                    </span>
+                  </motion.button>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </section>

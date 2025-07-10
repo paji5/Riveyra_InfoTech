@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Monitor, Tablet, Smartphone, Code, Palette, Zap, ShoppingCart, ChevronDown, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -337,9 +338,11 @@ export default function ResponsiveWebDesignPage() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="flex justify-center lg:justify-start pt-2"
               >
-                <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-lg shadow-lg shadow-green-500/25">
-                  More Details
-                </Button>
+                <Link href="/contact">
+                  <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-sm sm:text-base lg:text-lg font-semibold rounded-lg shadow-lg shadow-green-500/25">
+                    More Details
+                  </Button>
+                </Link>
               </motion.div>
             </div>
 

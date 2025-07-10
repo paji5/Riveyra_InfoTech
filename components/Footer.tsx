@@ -33,7 +33,7 @@ export default function Footer() {
     { name: "Services", href: "#services" },
     { name: "Career", href: "/career" },
     { name: "Portfolio", href: "#portfolio" },
-    { name: "Contact us", href: "#contact" },
+    { name: "Contact us", href: "/contact" },
   ]
 
   const [showGoToTop, setShowGoToTop] = useState(false)
@@ -225,21 +225,21 @@ export default function Footer() {
             <div className="space-y-4">
               {/* Review Image 1 */}
               <img
-                src="images/footer/review1.png"
+                src="/placeholder.svg?height=80&width=120"
                 alt="Review Platform 1"
                 className="w-full h-20 object-contain"
               />
 
               {/* Review Image 2 */}
               <img
-                src="images/footer/review2.png"
+                src="/placeholder.svg?height=80&width=120"
                 alt="Review Platform 2"
                 className="w-full h-20 object-contain"
               />
 
               {/* Review Image 3 */}
               <img
-                src="images/footer/review3.png"
+                src="/placeholder.svg?height=80&width=120"
                 alt="Review Platform 3"
                 className="w-full h-20 object-contain"
               />

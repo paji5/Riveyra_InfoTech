@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -341,9 +342,11 @@ export default function UIUXPage() {
                 </p>
               </div>
 
-              <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-500/25 transition-all duration-300">
-                More Details
-              </Button>
+              <Link href="/contact">
+                <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-500/25 transition-all duration-300">
+                  More Details
+                </Button>
+              </Link>
             </div>
 
             {/* Right Mockup */}

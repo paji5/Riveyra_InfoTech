@@ -2,7 +2,8 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef, useState } from "react"
-import { Search, Edit3, Eye, BarChart3, MessageSquare, ChevronDown, CheckCircle, Phone } from "lucide-react"
+import Link from "next/link"
+import { Search, Edit3, Eye, BarChart3, MessageSquare, ChevronDown, CheckCircle, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
@@ -124,6 +125,8 @@ export default function ContentWritingPage() {
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <span>Home</span>
                 <span>/</span>
+                <span>Services</span>
+                <span>/</span>
                 <span className="text-green-400">Content Writing</span>
               </div>
 
@@ -136,11 +139,12 @@ export default function ContentWritingPage() {
                 >
                   <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
                     Content Writing
-                  </span>
+                  </span>{" "}
+                  <span className="text-white">Services</span>
                 </motion.h1>
 
                 <motion.h2
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-blue-400 leading-relaxed"
+                  className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300 leading-relaxed"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -149,19 +153,14 @@ export default function ContentWritingPage() {
                 </motion.h2>
 
                 <motion.p
-                  className="text-gray-300 text-base sm:text-lg leading-relaxed"
+                  className="text-gray-400 text-base sm:text-lg leading-relaxed"
                   initial={{ opacity: 0, y: 30 }}
                   animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Did your Competitors pushed you back in ranking in just few days time? Fed up of paying huge sums to
-                  SEO and Content Writers at regular intervals for affiliation rankings? Are you looking for Content
-                  that serves you for long-term website promotions? Here is a Content Writing Service that is going to
-                  solve all your problems! We at Riveyra Infotech love to Create Content that can shape up your online
-                  presence Effectively and For Longer! Our Content Writing Services not only lift your rank but build
-                  your brand value in the market. Riveyra Infotech provides Content Writing Service that is completely
-                  based on business dynamics, market experiences and dedicated research and analysis. Understanding your
-                  business focus and objectives, we Custom Content that gives the results you always wished for.
+                  Transform your online presence with our professional content writing services. We create compelling,
+                  SEO-optimized content that engages your audience and drives results. From web copy to blog posts, our
+                  expert writers deliver content that converts visitors into customers.
                 </motion.p>
 
                 <motion.div
@@ -169,9 +168,12 @@ export default function ContentWritingPage() {
                   animate={isHeroInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-green-500/30 transition-all duration-300 hover:scale-105">
-                    Enquire Now
-                  </Button>
+                  <Link href="/contact">
+                    <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-lg shadow-2xl shadow-green-500/30 transition-all duration-300 hover:scale-105">
+                      Get Started Today
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>
@@ -185,8 +187,8 @@ export default function ContentWritingPage() {
             >
               <div className="relative">
                 <img
-                  src="/images/content-writing-hero.png"
-                  alt="Content Writing Professional"
+                  src="/images/dropdown/content-mar.png"
+                  alt="Content Writing Services"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
                 {/* Floating Elements */}
@@ -216,18 +218,22 @@ export default function ContentWritingPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-              How Is Content Writing Different At{" "}
+              Why Choose Our{" "}
               <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Riveyra Infotech
+                Content Writing Services
               </span>
             </h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              We deliver content that not only engages your audience but also drives measurable results for your
+              business
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {contentServices.map((service, index) => (
               <motion.div
                 key={service.id}
-                className="group relative p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-br from-gray-900/80 via-black/90 to-gray-900/80 border-2 border-green-500/30 hover:border-green-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 backdrop-blur-sm overflow-hidden"
+                className="group relative p-6 md:p-8 rounded-2xl bg-gradient-to-br from-gray-900/80 via-black/90 to-gray-900/80 border-2 border-green-500/30 hover:border-green-400/60 transition-all duration-500 hover:scale-105 hover:-translate-y-2 backdrop-blur-sm overflow-hidden"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -240,7 +246,7 @@ export default function ContentWritingPage() {
 
                 {/* Service Number */}
                 <div className="absolute top-4 right-4">
-                  <span className="text-6xl font-bold text-green-400/20 group-hover:text-green-400/40 transition-colors duration-300">
+                  <span className="text-4xl font-bold text-green-400/20 group-hover:text-green-400/40 transition-colors duration-300">
                     {service.id}
                   </span>
                 </div>
@@ -280,7 +286,7 @@ export default function ContentWritingPage() {
       </section>
 
       {/* Our Content Writing Services Section */}
-      <section ref={featuresRef} className="py-16 md:py-24 bg-white text-black relative">
+      <section ref={featuresRef} className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white text-black relative">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
@@ -299,17 +305,17 @@ export default function ContentWritingPage() {
                   Include:
                 </h2>
 
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-4">
                   {servicesList.map((service, index) => (
                     <motion.div
                       key={index}
-                      className="flex items-start space-x-3"
+                      className="flex items-start space-x-3 p-4 rounded-lg bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
                       initial={{ opacity: 0, x: -20 }}
                       animate={isFeaturesInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
                     >
                       <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 leading-relaxed">{service}</span>
+                      <span className="text-gray-700 leading-relaxed font-medium">{service}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -325,8 +331,8 @@ export default function ContentWritingPage() {
             >
               <div className="relative">
                 <img
-                  src="/placeholder.svg?height=600&width=500"
-                  alt="Content Writing Services"
+                  src="/images/dropdown/content-mar2.jpg"
+                  alt="Content Writing Services Portfolio"
                   className="w-full h-auto rounded-2xl shadow-2xl"
                 />
                 {/* Floating Elements */}
@@ -347,31 +353,63 @@ export default function ContentWritingPage() {
       </section>
 
       {/* CTA Section */}
-      <section
-        ref={ctaRef}
-        className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-blue-800 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 relative z-10">
+      <section ref={ctaRef} className="py-8 sm:py-12 lg:py-16 xl:py-20 relative overflow-hidden">
+        {/* Simple Blue Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-900/30 via-blue-800/20 to-blue-900/30"></div>
+          <div className="absolute top-10 left-10 sm:top-20 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 lg:w-48 lg:h-48 bg-blue-500/10 rounded-full blur-xl sm:blur-2xl"></div>
+          <div className="absolute bottom-10 right-10 sm:bottom-20 sm:right-20 w-20 h-20 sm:w-40 sm:h-40 lg:w-64 lg:h-64 bg-blue-400/10 rounded-full blur-xl sm:blur-2xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-20 relative z-10">
           <motion.div
-            className="text-center space-y-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            className="text-center scroll-animate"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-              Let's Start a New Project Together
-            </h2>
-
-            <motion.div
+            <motion.h2
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6 lg:mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={isCtaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8 }}
             >
-              <Button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold text-lg shadow-2xl transition-all duration-300 hover:scale-105">
-                <Phone className="w-5 h-5 mr-2" />
-                Call Us Now
-              </Button>
+              Let's Start a New Project <span className="text-blue-400">Together</span>
+            </motion.h2>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isCtaInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <Link href="/contact">
+                <motion.button
+                  className="relative group bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 sm:px-8 lg:px-12 py-3 sm:py-4 lg:py-5 text-sm sm:text-base lg:text-lg font-semibold rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.02,
+                    boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  {/* Simple Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300 -z-10"></div>
+
+                  {/* Button Text */}
+                  <span className="relative z-10 flex items-center justify-center gap-2">
+                    Call Us Now
+                    <motion.span
+                      animate={{ x: [0, 3, 0] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Number.POSITIVE_INFINITY,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      →
+                    </motion.span>
+                  </span>
+                </motion.button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -387,14 +425,17 @@ export default function ContentWritingPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">FAQ's</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-400 text-lg">Everything you need to know about our content writing services</p>
           </motion.div>
 
-          <div className="max-w-full sm:max-w-4xl mx-auto space-y-4">
+          <div className="max-w-4xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
-                className="border border-green-500/20 rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur-sm"
+                className="border border-green-500/20 rounded-xl overflow-hidden bg-gray-900/50 backdrop-blur-sm hover:border-green-500/40 transition-colors duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}

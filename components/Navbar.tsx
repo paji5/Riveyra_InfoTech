@@ -21,7 +21,7 @@ export default function Navbar() {
     { name: "Services", href: "#services", hasDropdown: true },
     { name: "Portfolio", href: "#portfolio" },
     { name: "Career", href: "/career" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/contact" },
   ]
 
   const servicesDropdown = {
@@ -195,7 +195,7 @@ export default function Navbar() {
             <div className="logo-icon relative">
               <div className="w-48 h-12 sm:w-60 sm:h-14 md:w-72 md:h-16 bg-transparent rounded-xl flex items-center justify-center">
                 <img
-                  src="/logo.png"
+                  src="/logoriv.png"
                   alt="Riveyra Infotech"
                   className="w-40 h-10 sm:w-52 sm:h-12 md:w-60 md:h-14 object-contain"
                 />
@@ -346,7 +346,7 @@ export default function Navbar() {
               <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
               <div className="relative flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+91-9919888269</span>
+                <span>Get Started</span>
               </div>
             </Button>
           </div>
