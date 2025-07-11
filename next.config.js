@@ -9,10 +9,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: 'export',
-  basePath :'',
- assetsPrefix: '',
+  output: 'export',       // Required for static export
+  basePath: '',           // Keep empty if not using subpath
+  assetPrefix: '',        // Typo fixed: `assetsPrefix` → `assetPrefix`
 };
 
 module.exports = nextConfig;
-
