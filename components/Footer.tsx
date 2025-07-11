@@ -225,21 +225,21 @@ export default function Footer() {
             <div className="space-y-4">
               {/* Review Image 1 */}
               <img
-                src="/placeholder.svg?height=80&width=120"
+                src="/images/footer/review1.png"
                 alt="Review Platform 1"
                 className="w-full h-20 object-contain"
               />
 
               {/* Review Image 2 */}
               <img
-                src="/placeholder.svg?height=80&width=120"
+                src="/images/footer/review2.png"
                 alt="Review Platform 2"
                 className="w-full h-20 object-contain"
               />
 
               {/* Review Image 3 */}
               <img
-                src="/placeholder.svg?height=80&width=120"
+                src="/images/footer/review3.png"
                 alt="Review Platform 3"
                 className="w-full h-20 object-contain"
               />

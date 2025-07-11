@@ -21,11 +21,12 @@ import {
   Award,
   ChevronDown,
   ChevronRight,
-  Phone,
   Home,
+  ArrowRight,
 } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 
@@ -231,7 +232,9 @@ export default function ContentMarketingPage() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-2 text-sm text-gray-400 mb-6 sm:mb-8"
             >
-              <Home className="w-4 h-4" />
+              <Link href="/" className="hover:text-green-400 transition-colors">
+                <Home className="w-4 h-4" />
+              </Link>
               <ChevronRight className="w-4 h-4" />
               <span className="text-green-400">Content Marketing</span>
             </motion.div>
@@ -254,17 +257,15 @@ export default function ContentMarketingPage() {
                       Content Marketing
                     </span>
                   </motion.h1>
-
                   <motion.p
                     className="text-lg sm:text-xl md:text-2xl text-blue-400 mb-4 sm:mb-6"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
                   >
-                    At Riveyra Infotech, we take great satisfaction in offering our clients PPC advertising services of
-                    the highest grade that provide noticeable outcomes.
+                    At Riveyra Infotech, we take great satisfaction in offering our clients content marketing services
+                    of the highest grade that provide noticeable outcomes.
                   </motion.p>
-
                   <motion.p
                     className="text-base sm:text-lg text-gray-300 leading-relaxed"
                     initial={{ opacity: 0, y: 20 }}
@@ -272,23 +273,24 @@ export default function ContentMarketingPage() {
                     transition={{ duration: 0.6, delay: 0.6 }}
                   >
                     Our method is based on a calculated fusion of industry knowledge, laborious preparation, and a
-                    dedication to ongoing optimization. In order to customize our PPC campaigns to meet our clients'
-                    specific needs—whether it be raising conversion rates, increasing website traffic, or raising brand
-                    awareness—we start by getting to know their individual goals and objectives.
+                    dedication to ongoing optimization. In order to customize our content marketing campaigns to meet
+                    our clients' specific needs—whether it be raising conversion rates, increasing website traffic, or
+                    raising brand awareness—we start by getting to know their individual goals and objectives.
                   </motion.p>
                 </div>
-
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 }}
                 >
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                  >
-                    Enquire Now
-                  </Button>
+                  <Link href="/contact">
+                    <Button
+                      size="lg"
+                      className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                    >
+                      Enquire Now
+                    </Button>
+                  </Link>
                 </motion.div>
               </motion.div>
 
@@ -300,15 +302,14 @@ export default function ContentMarketingPage() {
               >
                 <div className="relative z-10">
                   <Image
-                    src="/images/content-marketing-hero.png"
+                    src="/images/dropdown/content.png"
                     alt="Content Marketing Illustration"
                     width={600}
                     height={400}
-                    className="w-full h-auto"
+                    className="w-full h-auto rounded-2xl"
                     priority
                   />
                 </div>
-
                 {/* Floating Elements Around Image */}
                 <motion.div
                   className="absolute -top-4 -left-4 w-8 h-8 bg-green-500/20 rounded-full"
@@ -467,13 +468,15 @@ export default function ContentMarketingPage() {
               Ready to transform your content marketing strategy? Let's discuss your goals and create something amazing
               together.
             </p>
-            <Button
-              size="lg"
-              className="bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            >
-              <Phone className="w-5 h-5 mr-2" />
-              Call Us Now
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-gray-900 hover:bg-gray-800 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                Call Us Now
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </motion.div>
         </section>
 

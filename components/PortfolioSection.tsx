@@ -78,8 +78,8 @@ export default function PortfolioSection() {
       category: "erp",
       images: [
         "images/projectimg/pro_2.1.png",
-        "images/projectimg/pro_2.1.png",
-        "images/projectimg/pro_2.1.png",
+        "images/projectimg/pro_2.2.png",
+        "images/projectimg/pro_2.3.png",
       ],
       description:
         "Don't hassle with paper records instead experience the convenience of our state-of-the-art File Management System and ERPs. Retrieve all your records effortlessly with a single click, while enjoying smooth operations and robust security measures for a seamless and secure data management experience.",

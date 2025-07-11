@@ -195,7 +195,7 @@ export default function Navbar() {
             <div className="logo-icon relative">
               <div className="w-48 h-12 sm:w-60 sm:h-14 md:w-72 md:h-16 bg-transparent rounded-xl flex items-center justify-center">
                 <img
-                  src="/logoriv.png"
+                  src="/logo.png"
                   alt="Riveyra Infotech"
                   className="w-40 h-10 sm:w-52 sm:h-12 md:w-60 md:h-14 object-contain"
                 />
