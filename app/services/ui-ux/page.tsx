@@ -289,7 +289,7 @@ export default function UIUXPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
-      <Navbar />
+    
 
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
@@ -504,7 +504,7 @@ export default function UIUXPage() {
         </div>
       </section>
 
-      <Footer />
+     
     </div>
   )
 }

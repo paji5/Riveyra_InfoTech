@@ -1,11 +1,11 @@
 "use client"
-
 import { useEffect, useState } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone, ChevronDown, Sparkles } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link" // Import Link for navigation
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -195,7 +195,7 @@ export default function Navbar() {
             <div className="logo-icon relative">
               <div className="w-48 h-12 sm:w-60 sm:h-14 md:w-72 md:h-16 bg-transparent rounded-xl flex items-center justify-center">
                 <img
-                  src="/logoriv.png"
+                  src="/logo.png"
                   alt="Riveyra Infotech"
                   className="w-40 h-10 sm:w-52 sm:h-12 md:w-60 md:h-14 object-contain"
                 />
@@ -342,13 +342,15 @@ export default function Navbar() {
             ))}
 
             {/* CTA Button */}
-            <Button className="cta-button bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-6 py-2 rounded-lg font-semibold shadow-lg shadow-green-500/25 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
-              <div className="relative flex items-center space-x-2">
-                <Phone className="w-4 h-4" />
-                <span>Get Started</span>
-              </div>
-            </Button>
+            <Link href="/contact" passHref>
+              <Button className="cta-button bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-6 py-2 rounded-lg font-semibold shadow-lg shadow-green-500/25 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div>
+                <div className="relative flex items-center space-x-2">
+                  <Phone className="w-4 h-4" />
+                  <span>+91 9919888269</span>
+                </div>
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -359,81 +361,81 @@ export default function Navbar() {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden overflow-hidden"
-            >
-              <div className="py-4 bg-black/95 backdrop-blur-lg rounded-lg mt-2 border border-green-500/20 max-h-[80vh] overflow-y-auto">
-                {navItems.map((item) => (
-                  <div key={item.name}>
-                    {item.hasDropdown ? (
-                      <div>
-                        <button
-                          className="flex items-center justify-between w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 transition-all duration-200 rounded-lg mx-2"
-                          onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        >
-                          <span>{item.name}</span>
-                          <ChevronDown
-                            className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
-                          />
-                        </button>
-
-                        <AnimatePresence>
-                          {isServicesOpen && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              transition={{ duration: 0.2 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="max-h-64 overflow-y-auto bg-gray-900/50 mx-2 rounded-lg border border-green-500/10">
-                                {Object.entries(servicesDropdown).map(([category, data]) => (
-                                  <div key={category} className="p-3 border-b border-green-500/10 last:border-b-0">
-                                    <h4 className="text-orange-400 font-bold text-xs mb-2 uppercase tracking-wider">
-                                      {category}
-                                    </h4>
-                                    <div className="space-y-1">
-                                      {data.items.map((service) => (
-                                        <button
-                                          key={service.name}
-                                          className="block w-full text-left text-gray-300 hover:text-white hover:bg-green-500/10 px-2 py-1.5 rounded text-sm transition-all duration-200"
-                                          onClick={() => handleServiceClick(service.href)}
-                                        >
-                                          <div className="flex items-center">
-                                            <div
-                                              className={`w-1 h-1 bg-gradient-to-r ${data.color} rounded-full mr-2`}
-                                            ></div>
-                                            {service.name}
-                                          </div>
-                                        </button>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    ) : (
+      </div>
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden overflow-hidden"
+          >
+            <div className="py-4 bg-black/95 backdrop-blur-lg rounded-lg mt-2 border border-green-500/20 max-h-[80vh] overflow-y-auto">
+              {navItems.map((item) => (
+                <div key={item.name}>
+                  {item.hasDropdown ? (
+                    <div>
                       <button
-                        className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 transition-all duration-200 rounded-lg mx-2"
-                        onClick={() => handleNavClick(item.href)}
+                        className="flex items-center justify-between w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 transition-all duration-200 rounded-lg mx-2"
+                        onClick={() => setIsServicesOpen(!isServicesOpen)}
                       >
-                        {item.name}
+                        <span>{item.name}</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`}
+                        />
                       </button>
-                    )}
-                  </div>
-                ))}
-                <div className="px-2 pt-2">
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="overflow-hidden"
+                          >
+                            <div className="max-h-64 overflow-y-auto bg-gray-900/50 mx-2 rounded-lg border border-green-500/10">
+                              {Object.entries(servicesDropdown).map(([category, data]) => (
+                                <div key={category} className="p-3 border-b border-green-500/10 last:border-b-0">
+                                  <h4 className="text-orange-400 font-bold text-xs mb-2 uppercase tracking-wider">
+                                    {category}
+                                  </h4>
+                                  <div className="space-y-1">
+                                    {data.items.map((service) => (
+                                      <button
+                                        key={service.name}
+                                        className="block w-full text-left text-gray-300 hover:text-white hover:bg-green-500/10 px-2 py-1.5 rounded text-sm transition-all duration-200"
+                                        onClick={() => handleServiceClick(service.href)}
+                                      >
+                                        <div className="flex items-center">
+                                          <div
+                                            className={`w-1 h-1 bg-gradient-to-r ${data.color} rounded-full mr-2`}
+                                          ></div>
+                                          {service.name}
+                                        </div>
+                                      </button>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <button
+                      className="block w-full text-left px-4 py-3 text-gray-300 hover:text-white hover:bg-green-500/10 transition-all duration-200 rounded-lg mx-2"
+                      onClick={() => handleNavClick(item.href)}
+                    >
+                      {item.name}
+                    </button>
+                  )}
+                </div>
+              ))}
+              <div className="px-2 pt-2">
+                <Link href="/contact" passHref>
                   <Button
                     className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black py-3 rounded-lg font-semibold shadow-lg shadow-green-500/25"
                     onClick={() => setIsOpen(false)}
@@ -441,13 +443,12 @@ export default function Navbar() {
                     <Phone className="w-4 h-4 mr-2" />
                     Get Started
                   </Button>
-                </div>
+                </Link>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {/* Animated border */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-green-500/50 to-transparent"></div>
     </nav>

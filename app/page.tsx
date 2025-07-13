@@ -144,14 +144,14 @@ export default function Home() {
 
       {!showLoader && (
         <>
-          <Navbar />
+         
           <HeroSection />
           <AboutSection />
           <ServicesSection />
           <FeaturesSection />
           <PortfolioSection />
           <TestimonialsSection />
-          <Footer />
+    
         </>
       )}
     </div>

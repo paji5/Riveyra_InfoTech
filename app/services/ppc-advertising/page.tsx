@@ -109,8 +109,7 @@ export default function PPCAdvertisingPage() {
 
   return (
     <div className="bg-black min-h-screen text-white overflow-x-hidden">
-      <Navbar />
-
+    
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10">
         {/* Background Effects */}
@@ -378,7 +377,7 @@ export default function PPCAdvertisingPage() {
         </div>
       </section>
 
-      <Footer />
+    
     </div>
   )
 }

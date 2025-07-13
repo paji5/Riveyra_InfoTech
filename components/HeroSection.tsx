@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { ArrowRight, Sparkles } from "lucide-react"
 import { useState, useEffect } from "react"
+import Link from "next/link" // Import Link for navigation
 
 const headings = [
   "Your Creative Design Partner",
@@ -48,7 +49,7 @@ export default function HeroSection() {
     },
     {
       name: "CMI",
-      image: "/images//cmi.png",
+      image: "/images/cmi.png",
       link: "https://www.cmi.org.uk/",
     },
     {
@@ -58,12 +59,12 @@ export default function HeroSection() {
     },
     {
       name: "ISO Certified",
-      image: "/images//iso-c.png",
+      image: "/images/iso-c.png",
       link: "https://www.iso.org/",
     },
     {
       name: "Startup India",
-      image: "/images//startupindia.png",
+      image: "/images/startupindia.png",
       link: "https://www.startupindia.gov.in/",
     },
   ]
@@ -78,7 +79,7 @@ export default function HeroSection() {
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-30">
-          <source src="https://videos.pexels.com/video-files/3141210/3141210-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <source src="/videobg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
@@ -170,13 +171,15 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 0.6 }}
             >
               <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-                <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-8 py-3 rounded-lg font-semibold transform transition-all duration-200 shadow-lg shadow-green-500/25 relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <span className="relative z-10 flex items-center">
-                    Get Started Free
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                  </span>
-                </Button>
+                <Link href="/contact" passHref>
+                  <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-8 py-3 rounded-lg font-semibold transform transition-all duration-200 shadow-lg shadow-green-500/25 relative overflow-hidden group">
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <span className="relative z-10 flex items-center">
+                      Get Started Free
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
+                  </Button>
+                </Link>
               </motion.div>
             </motion.div>
 

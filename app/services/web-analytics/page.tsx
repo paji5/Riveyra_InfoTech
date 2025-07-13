@@ -123,7 +123,7 @@ export default function WebAnalyticsPage() {
 
   return (
     <>
-      <Navbar />
+     
       <div className="min-h-screen bg-black text-white overflow-hidden">
         {/* Enhanced Floating Background Elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -683,7 +683,7 @@ export default function WebAnalyticsPage() {
           </div>
         </section>
       </div>
-      <Footer />
+    
     </>
   )
 }

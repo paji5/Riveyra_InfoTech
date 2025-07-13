@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { MapPin, Clock, Code, Search, Palette, Sparkles, ArrowRight, Users } from "lucide-react"
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import Link from "next/link"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -150,6 +151,16 @@ export default function CareerPage() {
     }
   }
 
+  const createApplicationUrl = (job: (typeof jobOpenings)[0]) => {
+    const params = new URLSearchParams({
+      job: job.title,
+      experience: job.experience,
+      location: job.location.split(",")[0],
+      type: job.type,
+    })
+    return `/career/apply?${params.toString()}`
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
       {/* Animated Background Elements */}
@@ -183,7 +194,7 @@ export default function CareerPage() {
         />
       </div>
 
-      <Navbar />
+
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
@@ -396,15 +407,17 @@ export default function CareerPage() {
 
                       {/* Apply Button */}
                       <div className="mt-auto">
-                        <Button
-                          className={`w-full bg-gradient-to-r ${job.gradient} hover:shadow-lg hover:shadow-current/25 text-white font-semibold py-3 rounded-xl relative overflow-hidden group/btn transition-all duration-300`}
-                        >
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-                          <span className="relative flex items-center justify-center gap-2">
-                            Apply Now
-                            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                          </span>
-                        </Button>
+                        <Link href={createApplicationUrl(job)}>
+                          <Button
+                            className={`w-full bg-gradient-to-r ${job.gradient} hover:shadow-lg hover:shadow-current/25 text-white font-semibold py-3 rounded-xl relative overflow-hidden group/btn transition-all duration-300`}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
+                            <span className="relative flex items-center justify-center gap-2">
+                              Apply Now
+                              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
+                            </span>
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -424,18 +437,20 @@ export default function CareerPage() {
             <p className="text-gray-400 text-lg mb-6">
               Don't see a position that fits? We're always looking for talented individuals.
             </p>
-            <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-purple-500/25 relative overflow-hidden group">
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative flex items-center gap-2">
-                Send Your Resume
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-              </span>
-            </Button>
+            <Link href="/career/apply?job=General Application">
+              <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-xl font-semibold shadow-lg shadow-purple-500/25 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative flex items-center gap-2">
+                  Send Your Resume
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </span>
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      <Footer />
+    
     </div>
   )
 }

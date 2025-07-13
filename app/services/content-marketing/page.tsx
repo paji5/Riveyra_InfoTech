@@ -181,7 +181,7 @@ export default function ContentMarketingPage() {
 
   return (
     <>
-      <Navbar />
+      
       <div className="min-h-screen bg-black text-white">
         {/* Floating Background Elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -536,7 +536,7 @@ export default function ContentMarketingPage() {
           </div>
         </section>
       </div>
-      <Footer />
+     
     </>
   )
 }

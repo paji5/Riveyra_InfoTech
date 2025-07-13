@@ -256,7 +256,7 @@ export default function ResponsiveWebDesignPage() {
 
   return (
     <div className="bg-black min-h-screen text-white overflow-x-hidden">
-      <Navbar />
+     
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10">
@@ -668,7 +668,7 @@ export default function ResponsiveWebDesignPage() {
         </div>
       </section>
 
-      <Footer />
+     
     </div>
   )
 }

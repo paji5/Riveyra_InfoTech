@@ -101,7 +101,7 @@ export default function ContentWritingPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar />
+   
 
       {/* Hero Section */}
       <section ref={heroRef} className="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
@@ -469,7 +469,7 @@ export default function ContentWritingPage() {
         </div>
       </section>
 
-      <Footer />
+     
     </div>
   )
 }

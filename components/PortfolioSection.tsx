@@ -208,7 +208,7 @@ export default function PortfolioSection() {
       category: "web",
       images: [
         "images/projectimg/pro_8.1.png",
-        "images/projectimg/pro_8.2png",
+        "images/projectimg/pro_8.2.png",
         "images/projectimg/pro_8.3.png",
       ],
       description:
@@ -959,23 +959,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* CTA Section - Hidden on mobile */}
-        <motion.div
-          className="text-center mt-8 md:mt-12 hidden md:block"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
-        >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black px-6 md:px-12 py-3 md:py-4 rounded-xl font-semibold text-sm md:text-lg shadow-2xl shadow-green-500/30 relative overflow-hidden group">
-              <span className="relative flex items-center">
-                View All Projects
-                <motion.div whileHover={{ x: 8 }} transition={{ duration: 0.2 }}>
-                  <ExternalLink className="w-4 h-4 md:w-5 md:h-5 ml-2" />
-                </motion.div>
-              </span>
-            </Button>
-          </motion.div>
-        </motion.div>
+       
       </div>
     </section>
   )

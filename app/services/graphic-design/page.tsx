@@ -227,7 +227,6 @@ export default function GraphicDesignPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative overflow-hidden">
-      <Navbar />
 
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none">
@@ -400,7 +399,7 @@ export default function GraphicDesignPage() {
         </div>
       </div>
 
-      <Footer />
+    
     </div>
   )
 }

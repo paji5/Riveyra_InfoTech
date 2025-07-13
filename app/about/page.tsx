@@ -104,7 +104,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-      <Navbar />
+      
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
@@ -281,7 +281,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <Footer />
+     
     </div>
   )
 }

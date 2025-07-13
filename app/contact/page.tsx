@@ -149,7 +149,7 @@ export default function ContactPage() {
         </div>
 
         <div className="relative z-10">
-          <Navbar />
+         
           <div className="pt-16 sm:pt-20 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, scale: 0.8, y: 50 }}
@@ -233,7 +233,7 @@ export default function ContactPage() {
       </div>
 
       <div className="relative z-20">
-        <Navbar />
+       
 
         {/* Hero Section */}
         <div className="pt-16 sm:pt-20">
@@ -787,7 +787,7 @@ export default function ContactPage() {
           </div>
         </motion.div>
 
-        <Footer />
+       
       </div>
     </div>
   )

@@ -138,7 +138,7 @@ export default function AndroidAppDevelopmentPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar />
+     
 
       {/* Breadcrumb */}
       <div className="pt-20 sm:pt-24 pb-4 sm:pb-8 px-4 sm:px-6">
@@ -519,7 +519,7 @@ export default function AndroidAppDevelopmentPage() {
       {/* CTA Section */}
       <CommonCTASection />
 
-      <Footer />
+    
     </div>
   )
 }

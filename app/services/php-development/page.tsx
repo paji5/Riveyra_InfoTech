@@ -90,7 +90,7 @@ export default function PHPDevelopmentPage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navbar />
+     
 
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">

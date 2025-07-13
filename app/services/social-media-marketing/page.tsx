@@ -172,7 +172,7 @@ export default function SocialMediaMarketingPage() {
 
   return (
     <div className="bg-black min-h-screen text-white overflow-x-hidden">
-      <Navbar />
+     
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10">
@@ -646,7 +646,6 @@ export default function SocialMediaMarketingPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   )
 }

@@ -81,7 +81,7 @@ export default function SEOServicePage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#0a0a0a] text-white">
-      <Navbar /> {/* Common Navbar */}
+      {/* Common Navbar */}
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-[#0a0a0a] to-[#1a1a1a]">
@@ -278,7 +278,7 @@ export default function SEOServicePage() {
           </div>
         </section>
       </main>
-      <Footer />
+   
     </div>
   )
 }
