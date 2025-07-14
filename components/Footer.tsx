@@ -259,8 +259,72 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <p className="text-gray-400 text-sm">
-              Copyright © 2023-24, All Right Reserved Made With <span className="text-red-500">❤️</span> in INDIA
-            </p>
+              Copyright © 2025, All Right Reserved Made With <span className="text-red-500">❤️</span> in INDIA
+            </p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <Link href="https://www.linkedin.com/in/simarjeet-singh-padam-933204290/" passHref> <div className="text-gray-400 text-sm">    <span>Developed by Simarjeet Singh Padam</span>
+                </div>
+                
+           { /* 
+ Enables client-side rendering using "use client".
+ Importing React hooks (useState, useEffect).
+ Importing motion from Framer Motion for animations.                                                                                                                                                                                                                                                                                                                 
+ Importing icons from Lucide React.
+ Importing Link from Next.js.
+ Importing ChatWidget component.
+
+
+
+- Footer component starts.
+- socialLinks: Array of social media icons and their URLs.
+- usefulLinks: Array of navigation links for quick access.
+- showGoToTop: State to manage "Go to Top" button visibility.
+- isChatOpen: State to manage chat widget visibility.
+
+
+
+- useEffect to track scroll position.
+- Sets showGoToTop true if scrolled more than 300px.
+- Adds/removes scroll event listener.
+
+
+
+- scrollToTop: Smoothly scrolls page to top.
+- openWhatsApp: Opens WhatsApp chat in a new tab.
+- toggleChat: Opens/closes the Chat Widget.
+
+
+
+- Footer return starts:
+  - Background gradients & shapes for decorative UI.
+  - Company Info:
+     - Shows company logo, description, social media links.
+  - Contact Info:
+     - Address, phone numbers, email details with icons.
+  - Useful Links:
+     - Quick navigation using Link component.
+  - Reviews:
+     - Displays static images of review platforms.
+
+
+
+- Copyright section:
+  - Footer copyright text.
+  - "Developed by" credit (currently commented).
+
+- Floating Buttons:
+  - WhatsApp Button (bottom-left).
+  - Chat Button (above WhatsApp button).
+  - "Go to Top" Button (bottom-right when scrolled).
+
+- ChatWidget rendered at the end:
+  - Controlled using isChatOpen state.
+
+- Component export ends.
+
+    */}
+
+            
+            </Link>
+           
           </motion.div>
         </div>
 
